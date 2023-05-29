@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "cctv",
+    "slug": "cctv",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.jeongseok.cctv",
+      "permissions": ["READ_CONTACTS", "WRITE_CONTACTS", "SEND_SMS"]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "53c85a5d-d1a6-45ba-8ea9-e6bbf5a7f99a"
+      }
+    }
+  }
+}
