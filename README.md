@@ -34,7 +34,7 @@
 
 ### 🔗프로젝트 링크
 
-###### <p align="left">디자인 시안 (피그마)[![텍스트](./ReadmeImg/figma.png)](https://www.figma.com/file/X3dZkvNlJOnyDw3GPHWlcd/4%EC%B0%A8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EB%A9%8D%EB%83%A5%EC%9D%B4%EB%9E%91?node-id=0%3A1&t=y5UWV4usFotboNmd-1)</p>
+###### <p align="left">디자인 시안 (피그마)[![텍스트](./ReadmeImg/figma.png)]([https://www.figma.com/file/X3dZkvNlJOnyDw3GPHWlcd/4%EC%B0%A8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EB%A9%8D%EB%83%A5%EC%9D%B4%EB%9E%91?node-id=0%3A1&t=y5UWV4usFotboNmd-1](https://www.figma.com/file/Rbw7XdDBpmzXwK0T8MPThq/Untitled?type=design&node-id=0%3A1&t=cgh5OpAzncyUZKuL-1))</p>
 
 ### 💡프로젝트 내 기능구현
 
