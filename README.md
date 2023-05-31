@@ -36,7 +36,6 @@
 
 ###### <p align="left">디자인 시안 (피그마)[![텍스트](./ReadmeImg/figma.png)](https://www.figma.com/file/Rbw7XdDBpmzXwK0T8MPThq/Untitled?type=design&node-id=0%3A1&t=cgh5OpAzncyUZKuL-1)</p>
 
-
 ### 💡프로젝트 내 기능구현
 
 ▪ 메인페이지의 출발지,목적지 input에 값을 입력하고 검색 시 길안내 페이지로 전환되고 길안내 <br>

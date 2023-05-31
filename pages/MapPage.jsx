@@ -31,7 +31,7 @@ export default function MapPage({ navigation, route }) {
   const [start, setStart] = useState(departure);
   const [destination, setDestination] = useState(MDestination);
   // 지도기능
-  const [coordinate, setCoordinate] = useState({ latitude: 0, longitude: 0 });
+  const [coordinate, setCoordinate] = useState([]);
   const [initialRegion, setInitialRegion] = useState(null);
   const [startRegion, setStartRegion] = useState(null);
   const [currentLocation, setCurrentLocation] = useState(null);
@@ -48,7 +48,7 @@ export default function MapPage({ navigation, route }) {
   };
 
   useEffect(() => {
-    const initialCoordinate = { latitude: 37.123, longitude: -122.456 };
+    const initialCoordinate = { latitude: 37.123, longitude: 122.456 };
     setCoordinate(initialCoordinate);
   }, []);
 
@@ -58,22 +58,22 @@ export default function MapPage({ navigation, route }) {
   const markers = [
     {
       type: "currentLocation",
-      coordinate: { latitude: 37.78825, longitude: -122.4524 },
+      coordinate: { latitude: 37.78825, longitude: 122.4524 },
       image: require("../assets/img/me.png"),
     },
     {
       type: "start",
-      coordinate: { latitude: 37.78825, longitude: -122.4324 },
+      coordinate: { latitude: 37.78825, longitude: 122.4324 },
       image: require("../assets/img/start.png"),
     },
     {
       type: "destination",
-      coordinate: { latitude: 37.7876, longitude: -122.4214 },
+      coordinate: { latitude: 37.7876, longitude: 122.4214 },
       image: require("../assets/img/arrive.png"),
     },
     {
       type: "cctv",
-      coordinate: { latitude: 37.786, longitude: -122.43 },
+      coordinate: { latitude: 37.786, longitude: 122.43 },
       image: require("../assets/img/cctv.png"),
     },
   ];
@@ -84,24 +84,35 @@ export default function MapPage({ navigation, route }) {
       try {
         const { status } = await Location.requestForegroundPermissionsAsync();
         if (status !== "granted")
-          return console.log("Location permission denied");
+          return console.log("Permission to access location was denied.");
+
         const location = await Location.getCurrentPositionAsync({});
-        const { latitude, longitude } = location.coords;
+        setCurrentLocation(location.coords);
         setInitialRegion({
-          latitude,
-          longitude,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
+          latitude: location.coords.latitude,
+          longitude: location.coords.longitude,
+          latitudeDelta: 0.005,
+          longitudeDelta: 0.005,
         });
-        setCurrentLocation({ latitude, longitude });
-        const address = await reverseGeocodeCoordinates(latitude, longitude);
+        // 현재 위치를 출발지로 설정
+        const address = await reverseGeocodeCoordinates(
+          location.coords.latitude,
+          location.coords.longitude
+        );
         setStart(address);
       } catch (error) {
-        console.log("Error getting current location:", error);
+        console.log(error);
       }
     })();
   }, []);
-
+  function getDirections(start, destination) {
+    console.log(`Calculating directions from ${start} to ${destination}`);
+  }
+  useEffect(() => {
+    if (start && destination) {
+      getDirections(start, destination);
+    }
+  }, [start, destination]);
   // 검색창
 
   useEffect(() => {
