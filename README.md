@@ -51,9 +51,4 @@
 
 ### 📝작업 히스토리
 
-👇 API 데이터 경로 문제해결 히스토리 링크<br>
-[![텍스트](./ReadmeImg/GWTO.png)]()
-
-**문제** :
-
-**해결방안** :
+<p align="center">https://jeongseok-0214.tistory.com/9</p>
